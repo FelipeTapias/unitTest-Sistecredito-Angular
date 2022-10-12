@@ -21,3 +21,7 @@ export interface RootObject {
     earth_date: string;
     rover: Rover;
 }
+
+export interface marsPhotos {
+    photos: RootObject[];
+}

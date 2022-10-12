@@ -1,6 +1,6 @@
-<h4>Mars Rover Photos</h4>
+<h4 id="title-mars">Mars Rover Photos</h4>
 <div *ngIf="dataMarsPhotos">
-    <div *ngFor="let item of dataMarsPhotos" style="padding: 7px;">
+    <div *ngFor="let item of dataMarsPhotos; let i = index" style="padding: 7px;">
         <div class="card" style="width: 12rem;">
             <img src="{{item.img_src}}" class="card-img-top" alt="...">
             <div class="card-body">
