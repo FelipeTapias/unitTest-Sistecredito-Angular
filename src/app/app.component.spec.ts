@@ -11,7 +11,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-    }).compileComponents();
+    }).compileComponents()
   });
 
   it('should create the app', () => {
@@ -31,5 +31,5 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('uniTest-Sistecredito-Angular app is running!');
-  });
+  }); 
 });
