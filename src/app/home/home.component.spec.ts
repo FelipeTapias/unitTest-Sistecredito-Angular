@@ -8,12 +8,12 @@ import { dataHome } from './home-data.interface';
 const myDataHome: dataHome = {
   copyright: 'string',
   date: new Date(),
-  explanation: 'string',
+  explanation: 'Could the stem of our Milky Way bloom into an auroral flower? No, not really, even though it may appear that way in today’s featured all-sky image.',
   hdurl: 'string',
   media_type: 'string',
   service_version: 'string',
   title: 'The new asteroid',
-  url: 'string'
+  url: 'https://apod.nasa.gov/apod/image/2210/GalaxyFlower_Strand_960.jpg'
 }
 
 const HomeServiceMock = {

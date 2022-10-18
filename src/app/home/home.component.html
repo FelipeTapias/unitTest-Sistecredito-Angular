@@ -1,9 +1,10 @@
 <div class="sc_container mt-3" *ngIf="dataHome">
     <div class="row">
         <div class="col">
-            <h4 id="sc_title">{{ dataHome.title }}</h4>
+            <h4 id="sc_title"><strong>{{ dataHome.title }}</strong></h4>
             <hr>
             <p>{{ dataHome.explanation }}</p>
+            <p><strong>Picture date:</strong> {{ dataHome.date | date }}</p>
         </div>
         <div class="col">
             <img src="{{dataHome.url}}" alt="Img Nasa" style="height: 600px">
