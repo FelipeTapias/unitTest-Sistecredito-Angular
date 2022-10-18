@@ -16,17 +16,21 @@ const myDataHome: dataHome = {
   url: 'string'
 }
 
+const HomeServiceMock = {
+  getDataHome: () => {
+    return of(myDataHome)
+  }
+}
 
 fdescribe('HomeComponent', async () => {
 
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  let service: HomeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
-      providers: [HomeService],
+      providers: [{ provide: HomeService, useValue: HomeServiceMock }],
       imports: [HttpClientTestingModule]
     }).compileComponents()
 
@@ -35,9 +39,6 @@ fdescribe('HomeComponent', async () => {
 
     //get test component from the fixture
     component = fixture.componentInstance
-
-    //service provided to the TestBed
-    service = TestBed.inject(HomeService);
 
     // fixture.detectChanges();
 
@@ -48,18 +49,17 @@ fdescribe('HomeComponent', async () => {
   });
 
   it('ngOnInt', () => {
-    const spy = spyOn(service, 'getDataHome').and.returnValue(of(myDataHome))
+    const spy = spyOn(HomeServiceMock, 'getDataHome').and.returnValue(of(myDataHome))
     component.ngOnInit();
     expect(component.dataHome.copyright).toBe('string')
     expect(spy).toHaveBeenCalled();
   });
 
   it('should in the table show the data', () => {
-    const spy = spyOn(service, 'getDataHome').and.returnValue(of(myDataHome))
     component.ngOnInit();
     fixture.detectChanges();
-    const compileDom = fixture.nativeElement
-    expect(compileDom.querySelector('.sc_container h4').textContent).toContain('The new asteroid')
+    const compileDom = fixture.nativeElement;
+    expect(compileDom.querySelector('#sc_title').textContent).toContain('The new asteroid')
   });
 
 });
