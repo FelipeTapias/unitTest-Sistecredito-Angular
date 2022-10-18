@@ -1,0 +1,6 @@
+.sc_container {
+    padding: 5px;
+    border: 1px solid rgba(8, 8, 8, 0.247);
+    border-radius: 4px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
